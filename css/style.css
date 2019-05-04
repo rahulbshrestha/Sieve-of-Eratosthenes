@@ -1,0 +1,34 @@
+#game{
+  width: 35%;
+}
+
+.cell {
+  position: relative;
+  float: left;
+  width: 50px;
+  text-align: center;
+}
+
+.prime{
+  background-color: pink;
+}
+
+.multipleof2 {
+  background-color: red;
+}
+
+.multipleof3 {
+  background-color: green;
+}
+.multipleof5 {
+  background-color: blue;
+}
+.multipleof7{
+  background-color:yellow;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  font-family: Arial;
+}
