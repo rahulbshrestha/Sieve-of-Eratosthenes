@@ -2,7 +2,17 @@
   width: 35%;
 }
 
+#textBox{
+  position: absolute;
+  left: 50%;
+}
+
+.text{
+  font-family: Arial;
+  font-size: 20px;
+}
 .cell {
+  font-family: Arial;
   position: relative;
   float: left;
   width: 50px;
@@ -30,5 +40,9 @@
 h1 {
   text-align: center;
   font-size: 30px;
+  font-family: Arial;
+}
+h3{
+  text-align: center;
   font-family: Arial;
 }
