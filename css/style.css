@@ -1,25 +1,28 @@
-#game{
-  width: 35%;
+#numberchart {
+  width: 45%;
 }
 
-#textBox{
+#textBox {
   position: absolute;
-  left: 50%;
+  left: 55%;
+  right: 10%;
 }
 
-.text{
+.text {
   font-family: Arial;
   font-size: 20px;
 }
+
 .cell {
   font-family: Arial;
   position: relative;
   float: left;
   width: 50px;
   text-align: center;
+  margin: 5px 5px 5px 5px;
 }
 
-.prime{
+.prime {
   background-color: pink;
 }
 
@@ -30,11 +33,13 @@
 .multipleof3 {
   background-color: green;
 }
+
 .multipleof5 {
   background-color: blue;
 }
-.multipleof7{
-  background-color:yellow;
+
+.multipleof7 {
+  background-color: yellow;
 }
 
 h1 {
@@ -42,7 +47,8 @@ h1 {
   font-size: 30px;
   font-family: Arial;
 }
-h3{
+
+h3 {
   text-align: center;
   font-family: Arial;
 }
