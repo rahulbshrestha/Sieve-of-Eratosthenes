@@ -1,15 +1,10 @@
-#numberchart {
-  width: 45%;
-}
+body{
+  font-family: Arial;
+  text-align: center;
 
-#textBox {
-  position: absolute;
-  left: 55%;
-  right: 10%;
 }
 
 .text {
-  font-family: Arial;
   font-size: 20px;
 }
 
@@ -26,29 +21,17 @@
   background-color: pink;
 }
 
-.multipleof2 {
-  background-color: red;
+.notprime {
+  background-color: #82CAFA;
 }
 
-.multipleof3 {
-  background-color: green;
+
+#numberchart {
+  width: 45%;
 }
 
-.multipleof5 {
-  background-color: blue;
-}
-
-.multipleof7 {
-  background-color: yellow;
-}
-
-h1 {
-  text-align: center;
-  font-size: 30px;
-  font-family: Arial;
-}
-
-h3 {
-  text-align: center;
-  font-family: Arial;
+#textbox {
+  position: absolute;
+  left: 55%;
+  right: 10%;
 }

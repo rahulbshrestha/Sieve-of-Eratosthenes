@@ -3,49 +3,56 @@ $(document).ready(function() {
   var cell;
   var h;
 
-  $('#primeHeader').hide();
+  $('#textbox').hide();
+  var submitButton = document.getElementById('submit');
 
-  var addValueButton = document.getElementById('testid');
+  submitButton.addEventListener('click', function(e) {
+    var inputval = parseInt(jQuery("#input").val());
 
-  addValueButton.addEventListener('click', function(e) {
+    if (inputval != inputval){
+      alert("Error: No data entered!")
+    }else if (inputval <= 2 || inputval > 5000) {
+      alert("Error: Input maximum number must be > 2 and <= 5000!");
+    }else{
+      $('#textbox').show();
+      $('#inputbox').hide();
 
-    $('#primeHeader').show();
-    $('#inputBox').hide();
-    var inputtext = jQuery("#input").val();
-    inputtext = parseInt(inputtext);
+      var numberofCells = inputval;
+      var primeArr = getPrimes(numberofCells);
 
-    var numberofCells = inputtext;
-    var a = getPrimes(numberofCells);
-
-    for (var i = 1; i <= numberofCells; i++) { //Add cells
-      if (i == 1) { //Blank space left for 1
-        cell = $('<div>').addClass('cell').attr('data-cell', i).text("");
-      } else {
-        cell = $('<div>').addClass('cell').attr('data-cell', i).text(i);
-      }
-
-      for (var j = 1; j <= numberofCells; j++) {
-        if (a[j] == i) { //Check if current number is prime and color if it is
-          cell.addClass('prime');
-          $("#textBox").addClass('text').append(a[j] + "&nbsp; &nbsp; ");
+      for (var i = 1; i <= numberofCells; i++) { //Add cells
+        if (i == 1) { //Blank space left for 1
+          cell = $('<div>').addClass('cell').attr('data-cell', i).text("");
+        } else {
+          cell = $('<div>').addClass('cell').attr('data-cell', i).text(i);
         }
+        var isprime = false;
+        for (var j = 1; j <= primeArr.length; j++) {
+          if (primeArr[j] == i) { //Check if current number is prime and color if it is
+            cell.addClass('prime');
+            $("#textbox").addClass('text').append(primeArr[j] + "&nbsp; &nbsp; ");
+            isprime = true;
+          }
+        }
+        if (isprime == false && i != 1){ //Coloring non prime numbers
+          cell.addClass('notprime');
+        }
+        $('#numberchart').append(cell);
       }
-      $('#numberchart').append(cell);
-    }
 
-    h = $('.cell:last-of-type').width();
-    $('.cell').css({
-      height: h,
-      lineHeight: h + 'px'
-    });
+      h = $('.cell:last-of-type').width();
+      $('.cell').css({
+        height: h,
+        lineHeight: h + 'px'
+      });
+    }
   });
 });
 
 function getPrimes(n) {
   var arr = [...Array(n + 1).keys()]; //arr contains elements from 0 to n
   arr[1] = 0; //Removing 1 from being a prime number
-  var rt = Math.sqrt(n); // calculate only once
-  for (i = 2; i <= rt; i++) {
+  for (i = 2; i <= Math.sqrt(n); i++) {
     if (arr[i]) {
       for (var j = i * i; j <= n; j += i) {
         arr[j] = 0; //Replacing non prime numbers with 0
